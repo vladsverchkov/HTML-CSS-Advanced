@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    <!-- Создайте страницу с разметкой, на которой будет 
+         отображаться контактная информация Вашего учебного 
+         заведения или Вашей рабочей организации. Используя
+         микроданные и словарь терминов http://schema.org/Person 
+         добавьте их в разметку. Проверьте разметку на 
+         правильность оформления. 
+    -->
+
+    <section itemscope itemtype="http://schema.org/Organization">
+
+		<div class="block">
+
+			<h1 itemprop="name">НТУУ КПІ</h1>
+			<img itemprop="logo" src="pictures/logo_kpi.png">
+            <p itemprop="location">Адреса: Україна, 03056, м.Київ-56, проспект Перемоги, 37</p>
+            <p itemprop = "telephone">Телефон: 204-94-94</p>
+            <p itemprop = "email">Пошта: mail[at]kpi.ua, webmaster[at]kpi.ua</p>
+       	 	<p itemprop="description">
+        		Націона́льний техні́чний університе́т Украї́ни «Ки́ївський політехні́чний інститу́т і́мені І́горя Сіко́рського» — заклад вищої освіти інженерного профілю, заснований в Києві у 1898 р., на сьогодні це один із найбільших університетів України за кількістю студентів з широким спектром спеціальностей і освітніх програм
+        	</p>
+			<a itemprop="url" href="https://kpi.ua/">https://kpi.ua/</a>
+
+		</div>
+
+	</section>
+
+</body>
+</html>

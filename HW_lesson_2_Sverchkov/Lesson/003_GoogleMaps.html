@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Geolocation API</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <!--Возможность добавления своих карт и мест расположения на страницу https://www.google.com/maps-->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5082.468723865124!2d30.43184944592814!3d50.43673517490792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cc1c66027195%3A0x46b149b15853d43a!2z0LLRg9C70LjRhtGPINCd0ZbQttC40L3RgdGM0LrQsCwgMiwg0JrQuNGX0LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1527759849025"
+        width="300" height="250" style="border:10px solid green"></iframe>
+
+
+    <h3>Карта при помощи Leaflet API</h3>
+    <div id="map2" style="height:300px;width:500px;"></div>
+
+    <div id="map3" style="height:300px;width:500px;"></div>
+
+    <script>
+        //  //Карта при помощи Leaflet API с конкретным местом положения
+        // let center = [50.466048, 30.515125];
+
+        // // Создаём карту
+        // let map2 = L.map('map2').setView(center, 20);
+
+        // // Настраиваем OSM
+        // L.tileLayer(
+        //     'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        //         maxZoom: 18
+        //     }).addTo(map2);
+
+        // // добавляем маркер в указанном месте
+        // L.marker(center).addTo(map2);
+
+        //  //Карта при помощи Leaflet API с текущим местом положения
+        function success(position) {
+            let map2, marker,
+                latitude = position.coords.latitude,
+                longitude = position.coords.longitude;
+
+            // Получаем карту с использованием leaflet
+            map2 = L.map('map2').setView([latitude, longitude], 13);
+
+            L.tileLayer(
+                'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 18
+                }).addTo(map2);
+
+
+            // Маркер с использованием leaflet
+            marker = L.marker([latitude, longitude]).addTo(map2);
+        }
+
+        function error() {
+            alert('Получить текущую позицию не удалось. Пожалуйста, разрешите доступ к геолокации.');
+        }
+        navigator.geolocation.getCurrentPosition(success, error);
+
+
+        // function success(position) {
+        //     let map3, marker,
+        //         latitude = 34.9690623,
+        //         longitude = 138.9225774;
+
+        //     // Получаем карту с использованием leaflet
+        //     map3 = L.map('map3').setView([latitude, longitude], 13);
+
+        //     L.tileLayer(
+        //         'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        //             maxZoom: 18
+        //         }).addTo(map3);
+
+
+        //     // Маркер с использованием leaflet
+        //     marker = L.marker([latitude, longitude]).addTo(map3);
+        // }
+
+        // function error() {
+        //     alert('Получить текущую позицию не удалось. Пожалуйста, разрешите доступ к геолокации.');
+        // }
+        // navigator.geolocation.getCurrentPosition(success, error);
+
+        
+    </script>
+</body>
+
+</html>

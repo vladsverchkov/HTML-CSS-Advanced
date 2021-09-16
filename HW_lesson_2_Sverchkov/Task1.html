@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>Tour Site</title>
+
+    <script>
+        window.onload = function () {
+
+            const buttons = document.querySelectorAll("input[type=button]");
+            console.log(buttons);
+
+            buttons[0].addEventListener("click", function () {
+
+                let src1 = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1782.2501928755462!2d135.77501224423222!3d34.99015020966999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108cbf1f3175d%3A0x9ee84eec6cef1ded!2sFour%20Seasons%20Hotel%20Kyoto!5e0!3m2!1sru!2sua!4v1631805454300!5m2!1sru!2sua";
+                let iframe1 = document.createElement("iframe");
+                iframe1.style.width = "100%";
+                iframe1.style.height = "450px";
+                iframe1.style.border = "3px solid purple";
+                iframe1.src = src1;
+
+                let div1 = document.getElementsByClassName("map")[0].appendChild(iframe1);
+
+                buttons[0].disabled = "true";
+
+            });
+
+            buttons[1].addEventListener("click", function () {
+
+                let src1 = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2922.4836615788463!2d140.676285714303!3d42.90483955296358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0abb008a7fe601%3A0x4585c0994e1eb5b7!2sZaborin%20Ryokan!5e0!3m2!1sru!2sua!4v1631825103686!5m2!1sru!2sua";
+                let iframe1 = document.createElement("iframe");
+                iframe1.style.width = "100%";
+                iframe1.style.height = "450px";
+                iframe1.style.border = "3px solid purple";
+                iframe1.src = src1;
+
+                let div1 = document.getElementsByClassName("map")[1].appendChild(iframe1);
+
+                buttons[1].disabled = "true";
+
+            });
+
+            buttons[2].addEventListener("click", function () {
+
+                let src1 = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3267.7162705923884!2d135.76865871514406!3d35.01380697389227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001088d330e4013%3A0xadc333e62455b264!2sThe%20Ritz-Carlton%2C%20Kyoto!5e0!3m2!1sru!2sua!4v1631825215493!5m2!1sru!2sua";
+                let iframe1 = document.createElement("iframe");
+                iframe1.style.width = "100%";
+                iframe1.style.height = "450px";
+                iframe1.style.border = "3px solid purple";
+                iframe1.src = src1;
+
+                let div1 = document.getElementsByClassName("map")[2].appendChild(iframe1);
+
+                buttons[2].disabled = "true";
+
+            });
+
+            buttons[3].addEventListener("click", function () {
+
+                let src1 = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3269.503048684282!2d138.92257741514305!3d34.96906227630584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019ecb0cf30f2ad%3A0xc0d5830c8ffdc29d!2sAsaba%20Ryokan!5e0!3m2!1sru!2sua!4v1631825288551!5m2!1sru!2sua";
+                let iframe1 = document.createElement("iframe");
+                iframe1.style.width = "100%";
+                iframe1.style.height = "450px";
+                iframe1.style.border = "3px solid purple";
+                iframe1.src = src1;
+
+                let div1 = document.getElementsByClassName("map")[3].appendChild(iframe1);
+
+                buttons[3].disabled = "true";
+
+            });
+
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <!--Создайте страницу ТурФирмы. 
+        Основные элементы – header, footer, section, nav. 
+        В элементе section – минимум 4 блока с ТОПовыми 
+        отелями. В блоке есть фото и информация про отель. 
+        Снизу под описанием – кнопка – «Посмотреть на карте». 
+        При нажатии на кнопку – появляется карта с 
+        расположением данного отеля. -->
+
+    <header>
+
+        <div class="black_cover">
+
+            <nav>
+
+
+                <ul class="navigation">
+
+                    <div class="center_div">
+
+                        <li class="float_right"><a href="#">Home</a></li>
+                        <li class="float_right"><a href="#">About Us</a></li>
+                        <li class="float_right"><a href="#">Destinations</a></li>
+                        <li class="float_right"><a href="#">Holiday Types</a></li>
+                        <li class="float_right"><a href="#">Brochures</a></li>
+                        <li class="float_right"><a href="#">Blog</a></li>
+
+                        <li class="logo">
+                            <a href="#">
+                                <img src="pictures/logo.png" alt="Logo">
+                            </a>
+                        </li>
+
+                    </div>
+
+                </ul>
+
+
+
+            </nav>
+
+            <div class="main_title">
+                <h1>Welcome to Nihon</h1>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <section>
+        <div class="center_div">
+
+            <article>
+                <div class="header_article">
+                    <h3>Four Seasons Hotel Kyoto</h3>
+                </div>
+
+                <figure>
+                    <img src="pictures/kyoto_hotel.jpg" alt="Aeroplane">
+                </figure>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus iusto tempore fugit repellat
+                    veniam ab eius, magni ipsum dolor! Unde rerum velit explicabo, id necessitatibus ducimus harum
+                    repellat recusandae deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi officiis
+                    ab impedit, eos exercitationem consequuntur facere. Animi nobis suscipit dolores natus. A ullam
+                    reiciendis adipisci nihil consequatur nesciunt tempora odio.</p>
+
+                <input class="btn" type="button" value="Show on map">
+
+                <div class="map"></div>
+
+                <div class="down_info">
+                    <span class="first_el">Read more</span>
+                    <span class="first_el">2 comments</span>
+                    <span class="first_el"><span>Log in</span> or <span>register</span> to post comments</span>
+                </div>
+            </article>
+
+            <article>
+                <div class="header_article">
+                    <h3>Zaborin in Niseko, Hokkaido</h3>
+                </div>
+
+                <figure>
+                    <img src="pictures/zaborin-japan-l-xlarge.webp" alt="Aeroplane">
+                </figure>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus iusto tempore fugit repellat
+                    veniam ab eius, magni ipsum dolor! Unde rerum velit explicabo, id necessitatibus ducimus harum
+                    repellat recusandae deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi officiis
+                    ab impedit, eos exercitationem consequuntur facere. Animi nobis suscipit dolores natus. A ullam
+                    reiciendis adipisci nihil consequatur nesciunt tempora odio.</p>
+
+                <input class="btn" type="button" value="Show on map">
+
+                <div class="map"></div>
+
+                <div class="down_info">
+                    <span class="first_el">Read more</span>
+                    <span class="first_el">2 comments</span>
+                    <span class="first_el"><span>Log in</span> or <span>register</span> to post comments</span>
+                </div>
+            </article>
+
+            <article>
+                <div class="header_article">
+                    <h3>The Ritz-Carlton, Kyoto</h3>
+                </div>
+
+                <figure>
+                    <img src="pictures/ritz-carlton-kyoto-japan-l-xlarge.webp" alt="Aeroplane">
+                </figure>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus iusto tempore fugit repellat
+                    veniam ab eius, magni ipsum dolor! Unde rerum velit explicabo, id necessitatibus ducimus harum
+                    repellat recusandae deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi officiis
+                    ab impedit, eos exercitationem consequuntur facere. Animi nobis suscipit dolores natus. A ullam
+                    reiciendis adipisci nihil consequatur nesciunt tempora odio.</p>
+
+                <input class="btn" type="button" value="Show on map">
+
+                <div class="map"></div>
+
+                <div class="down_info">
+                    <span class="first_el">Read more</span>
+                    <span class="first_el">2 comments</span>
+                    <span class="first_el"><span>Log in</span> or <span>register</span> to post comments</span>
+                </div>
+            </article>
+
+            <article>
+                <div class="header_article">
+                    <h3> Asaba, Shuzenji, Shizuoka Prefecture</h3>
+                </div>
+
+                <figure>
+                    <img src="pictures/asaba-japan-l-xlarge.webp" alt="Aeroplane">
+                </figure>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus iusto tempore fugit repellat
+                    veniam ab eius, magni ipsum dolor! Unde rerum velit explicabo, id necessitatibus ducimus harum
+                    repellat recusandae deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi officiis
+                    ab impedit, eos exercitationem consequuntur facere. Animi nobis suscipit dolores natus. A ullam
+                    reiciendis adipisci nihil consequatur nesciunt tempora odio.</p>
+
+                <input class="btn" type="button" value="Show on map">
+
+                <div class="map"></div>
+
+                <div class="down_info">
+                    <span class="first_el">Read more</span>
+                    <span class="first_el">2 comments</span>
+                    <span class="first_el"><span>Log in</span> or <span>register</span> to post comments</span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="center_div">
+            2021. All rights reserved ©
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
