@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+
+    <style>
+        .images {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            justify-items: center;
+            row-gap: 30px;
+
+            /* grid-auto-columns: auto; */
+        }
+
+        .images img {
+            width: 150px;
+
+        }
+    </style>
+
+    <script>
+        window.addEventListener("load", function () {
+            const images = document.querySelectorAll("img");
+            const pInfo = document.getElementsByClassName("info")[0];
+
+            for (let i = 0, imgLength = images.length; i < imgLength; i++) {
+                pInfo.innerHTML += "Адрес картинки " + (i + 1) + ": " + images[i].src + "</br>";
+            }
+
+            let j = 0;
+            let timer = setInterval(() => {
+
+                if (j < images.length) {
+                    images[j].style.border = "3px solid red";
+                    j++;
+                }
+                else {
+                    clearInterval(timer);
+                }
+
+            }, 1000);
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <!-- Создайте страницу с произвольным количеством изображений. Создайте сценарий, который выведет
+         адреса всех изображений, которые загруженные на страницу, после чего с интервалом в одну секунду
+         по очереди каждому изображению добавит красную рамку.
+    -->
+
+    <div class="images">
+        <img src="https://bipbap.ru/wp-content/uploads/2018/06/img_resize.jpg" alt="Some pic">
+        <img src="https://bipbap.ru/wp-content/uploads/2018/06/3c980dd2e9c909ada7377cc89885231b.jpg" alt="Some pic">
+        <img src="https://bipbap.ru/wp-content/uploads/2018/06/3ee998952c2016c72a9ad131db1ea00d.jpg" alt="Some pic">
+        <img src="https://bipbap.ru/wp-content/uploads/2018/06/background-backgrounds-floral-flower-Favim.com-2429619.jpg"
+            alt="Some pic">
+        <img src="https://bipbap.ru/wp-content/uploads/2018/06/background-iphone-iphone-wallpaper-wallpapers-Favim.com-2787183.jpg"
+            alt="Some pic">
+        <img src="https://bipbap.ru/wp-content/uploads/2018/06/backgrounds-delicius-donut-food-Favim.com-2183410.jpg"
+            alt="Some pic">
+        <img src="https://bipbap.ru/wp-content/uploads/2018/06/backgrounds-ocean-pastel-purple-Favim.com-3574283.jpg"
+            alt="Some pic">
+        <img src="https://bipbap.ru/wp-content/uploads/2018/06/backgrounds-space-wallpapers-Favim.com-4747121.jpeg"
+            alt="Some pic">
+        <img src="https://bipbap.ru/wp-content/uploads/2018/06/backround-beach-emoji-summer-Favim.com-2931336.jpg"
+            alt="Some pic">
+    </div>
+
+    <br>
+    <br>
+
+    <p class="info"></p>
+
+</body>
+
+</html>

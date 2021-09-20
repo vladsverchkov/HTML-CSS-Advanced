@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+
+    <script>
+        window.onload = function () {
+            let video = document.querySelector("video");
+            let videoSrc = document.querySelector("source");
+
+            if (window.localStorage.length != 0) {
+                videoSrc.setAttribute("src", window.localStorage.getItem("chosenVideo"));
+                video.load();
+            }
+
+            let $ = function (id) {
+                return document.getElementById(id);
+            }
+
+            $("pause").addEventListener("click", function () {
+                video.pause();
+            });
+
+            $("resume").addEventListener("click", function () {
+                video.play();
+            });
+
+            $("stop").addEventListener("click", function () {
+                video.pause();
+                video.currentTime = 0;
+                video.load();
+            });
+
+            $("forward10").addEventListener("click", function () {
+                video.currentTime += 10;
+            });
+
+            $("backward10").addEventListener("click", function () {
+                video.currentTime -= 10;
+            });
+
+            $("increaseVolume").addEventListener("click", function () {
+                video.volume += 0.1;
+            });
+
+            $("decreaseVolume").addEventListener("click", function () {
+                video.volume -= 0.1;
+            });
+
+            $("video1").addEventListener("click", function () {
+                let videoToWatch = "video/tripleh.mp4";
+                videoSrc.setAttribute("src", videoToWatch);
+                video.load();
+
+                window.localStorage.setItem("chosenVideo", videoToWatch);
+            });
+
+            $("video2").addEventListener("click", function () {
+                let videoToWatch = "video/cmpunk.mp4";
+                videoSrc.setAttribute("src", videoToWatch);
+                video.load();
+
+                window.localStorage.setItem("chosenVideo", videoToWatch);
+            });
+
+            $("video3").addEventListener("click", function () {
+                let videoToWatch = "video/shield.mp4";
+                videoSrc.setAttribute("src", videoToWatch);
+                video.load();
+
+                window.localStorage.setItem("chosenVideo", videoToWatch);
+            });
+
+        }
+    </script>
+
+    <style>
+        .buttons_div {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            column-gap: 10px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .videos_div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 20px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <!-- Добавьте на страницу окно для просмотра видео и кнопки:
+
+        - остановить,
+
+        - продолжить просмотр,
+
+        - вперед на 10с,
+
+        - назад на 10 с,
+
+        - увеличить громкость,
+
+        - уменьшить громкость.
+
+        Также добавьте на страницу 3 кнопки с ссылками на видеофайлы. 
+        При нажатии на выбранный ролик, в окне начинается просмотр видео, выбранного пользователем. 
+        После перезагрузки страницы, видео должно загрузиться, и пользователь может продолжить
+        просмотр (который был до перезагрузки). Используйте сохранение информации в хранилище. 
+    -->
+    <div class="center">
+        <video width="600" height="400" poster="photo/photo1.jpg">
+            <!-- <source src="video/video.mp4" type="video/mp4"> -->
+            <source type="video/mp4">
+        </video>
+    </div>
+    
+
+    <br>
+    <br>
+    <div class="buttons_div">
+        
+            <input id="pause" type="button" value="Остановить">
+       
+            <input id="resume" type="button" value="Начать/продолжить просмотр">
+
+            <input id="stop" type="button" value="Стоп">          
+        
+            <input id="forward10" type="button" value="Вперёд на 10 сек">
+          
+            <input id="backward10" type="button" value="Назад на 10 сек">
+        
+            <input id="increaseVolume" type="button" value="Увеличить громкость">
+    
+            <input id="decreaseVolume" type="button" value="Уменьшить громкость">
+        
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="videos_div">
+        <input id="video1" type="button" value="Triple H Titantron">
+        <input id="video2" type="button" value="CM Punk Titantron">
+        <input id="video3" type="button" value="Shield`s Best PowerBombs">
+    </div>
+   
+
+</body>
+
+</html>

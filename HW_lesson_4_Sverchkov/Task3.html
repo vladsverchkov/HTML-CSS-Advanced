@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+
+    <script src="module.js"></script>
+
+    <script>
+        window.onload = function () {
+            let diagram = Module.buildDiagram([22, 65, 12, 55, 112, 83, 50],
+                600,
+                300,
+                "blue");
+
+            let container = document.getElementById("diagramContainer");
+            container.appendChild(diagram);
+
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Используя элемент SVG, напишите модуль, с помощью которого на странице будет
+         отображаться диаграмма в соответствии с данными, переданными массивом в модуль. -->
+    <div id="diagramContainer"></div>
+</body>
+
+</html>

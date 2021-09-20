@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <script>
+        window.onload = function () {
+
+
+
+            const imagesDiv = document.querySelector(".images");
+            const imageToView = document.querySelector(".full_image img");
+            const divImageToView = document.querySelector(".full_image");
+
+            function makeBigger(e) {
+
+                if (e.target != imagesDiv) {
+
+                    imageToView.src = e.target.src;
+                    imageToView.alt = e.target.alt;
+
+                    divImageToView.style.transition = "1s";
+                    imageToView.style.transition = "1s";
+
+                    imageToView.style.transform = "scale(4)";
+                    divImageToView.style.visibility = "visible";
+                    imageToView.style.visibility = "visible";
+
+                }
+                else {
+                    alert("Вы промахнулись, пытаясь клацнуть по картинке!");
+                }
+
+            }
+
+            function closeImage() {
+
+                imageToView.style.transform = "scale(1)";
+                imageToView.style.visibility = "hidden";
+                divImageToView.style.visibility = "hidden";
+
+            }
+
+            imagesDiv.addEventListener("click", makeBigger);
+            divImageToView.addEventListener("click", closeImage);
+
+        }
+    </script>
+
+    <style>
+        .images {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            justify-items: center;
+        }
+
+        .images img {
+            width: 150px;
+            border: 3px solid red;
+        }
+
+        .full_image {
+            margin-left: -10px;
+            position: absolute;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            visibility: hidden;
+        }
+
+        .full_image img {
+            position: absolute;
+            visibility: hidden;
+            top: 40vh;
+            left: 670px;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Создайте страницу-галерею. На странице должен выводиться список 
+         картинок preview небольших размеров. При нажатии на каждое изображение
+         превью должно отображаться большое изображение. 
+    -->
+
+    <div class="images">
+        <img src="pictures/1.jpeg" alt="Bear">
+        <img src="pictures/2.png" alt="Sun and Sky">
+        <img src="pictures/3.jpg" alt="River and Bridge">
+        <img src="pictures/4.webp" alt="Deer">
+        <img src="pictures/5.jpg" alt="City Rocks">
+    </div>
+
+    <div class="full_image">
+        <img src="" alt="">
+    </div>
+
+</body>
+
+</html>

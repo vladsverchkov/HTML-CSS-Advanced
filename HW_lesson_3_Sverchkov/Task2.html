@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <script>
+
+        window.onload = function () {
+            const buttons = document.querySelectorAll(".calc");
+            const paragraphs = document.querySelectorAll(".answer");
+            const buttonsStop = document.querySelectorAll(".stop");
+
+            function getInputValues() {
+                let inputA = +document.getElementById("firstInput").value;
+                let inputB = +document.getElementById("secondInput").value;
+                let inputsArray = [inputA, inputB];
+
+                return inputsArray;
+            }
+
+            let worker1, worker2, worker3, worker4;
+
+            //первая кнопка
+            buttons[0].addEventListener("click", function () {
+
+                let inputValues = getInputValues();
+
+                if (window.Worker) {
+                    if (typeof (worker1) == "undefined") {
+                        worker1 = new Worker("worker1.js");
+                    }
+
+                    worker1.postMessage(inputValues);
+
+                    worker1.addEventListener("message", function (e) {
+                        paragraphs[0].innerHTML += e.data + "</br>";
+                    }, false);
+
+
+                }
+                else {
+                    document.getElementById("result").innerHTML = "Ваш браузер не поддерживает технологию WebWorker";
+                }
+
+
+            });
+
+            buttonsStop[0].addEventListener("click", function () {
+                worker1.terminate();
+                worker1 = undefined;
+            });
+
+
+            //вторая кнопка
+            buttons[1].addEventListener("click", function () {
+
+                let inputValues = getInputValues();
+
+                if (window.Worker) {
+                    if (typeof (worker2) == "undefined") {
+                        worker2 = new Worker("worker2.js");
+                    }
+
+                    worker2.postMessage(inputValues);
+
+                    worker2.addEventListener("message", function (e) {
+                        paragraphs[1].innerHTML += e.data + "</br>";
+                    }, false);
+
+
+                }
+                else {
+                    document.getElementById("result").innerHTML = "Ваш браузер не поддерживает технологию WebWorker";
+                }
+
+
+            });
+
+            buttonsStop[1].addEventListener("click", function () {
+                worker2.terminate();
+                worker2 = undefined;
+            });
+
+
+            //третья кнопка
+            buttons[2].addEventListener("click", function () {
+
+                let inputValues = getInputValues();
+
+                if (window.Worker) {
+                    if (typeof (worker3) == "undefined") {
+                        worker3 = new Worker("worker3.js");
+                    }
+
+                    worker3.postMessage(inputValues);
+
+                    worker3.addEventListener("message", function (e) {
+                        paragraphs[2].innerHTML += e.data + "</br>";
+                    }, false);
+
+
+                }
+                else {
+                    document.getElementById("result").innerHTML = "Ваш браузер не поддерживает технологию WebWorker";
+                }
+
+
+            });
+
+            buttonsStop[2].addEventListener("click", function () {
+                worker3.terminate();
+                worker3 = undefined;
+            });
+
+            //четвёртая кнопка
+            buttons[3].addEventListener("click", function () {
+
+                let inputValues = getInputValues();
+
+                if (window.Worker) {
+                    if (typeof (worker4) == "undefined") {
+                        worker4 = new Worker("worker4.js");
+                    }
+
+                    worker4.postMessage(inputValues);
+
+                    worker4.addEventListener("message", function (e) {
+                        paragraphs[3].innerHTML += e.data + "</br>";
+                    }, false);
+
+
+                }
+                else {
+                    document.getElementById("result").innerHTML = "Ваш браузер не поддерживает технологию WebWorker";
+                }
+
+
+            });
+
+            buttonsStop[3].addEventListener("click", function () {
+                worker4.terminate();
+                worker4 = undefined;
+            });
+
+
+
+        }
+
+    </script>
+
+    <style>
+        .answerBlocks {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <!-- Создайте сайт, где будет возможность производить сложный расчет данных из калькулятора. 
+         Добавьте 2 поля ввода и 4 кнопки для математических операций. После нажатия на каждую из
+         кнопок – должен создаваться свой Worker и при обращении к потоку – в нем будет
+         производиться вычисления. Используйте 4 файла Worker.js с различным функционалом. 
+    -->
+
+    A: <input type="text" name="" id="firstInput">
+    <br>
+    <br>
+    B: <input type="text" name="" id="secondInput">
+    <br>
+    <br>
+
+    <input type="button" value="Посчитать числа Фибоначчи при i = A+B" class="calc">
+    <input type="button" value="Остановить WebWorker1 " class="stop">
+    <br>
+    <br>
+    <input type="button" value="Найти факториал суммы двух чисел" class="calc">
+    <input type="button" value="Остановить WebWorker 2" class="stop">
+    <br>
+    <br>
+    <input type="button" value="Совершить (A+B) умножений при том, что на каждой итерации умножаем на рандомное число" class="calc">
+    <input type="button" value="Остановить WebWorker 3" class="stop">
+    <br>
+    <br>
+    <input type="button" value="Некоторые сложные вычисления" class="calc">
+    <input type="button" value="Остановить WebWorker 4" class="stop">
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="answerBlocks">
+        <div> Ответы для первой кнопки
+            <p class="answer"></p>
+        </div>
+        <div> Ответы для второй кнопки
+            <p class="answer"></p>
+        </div>
+        <div> Ответы для третьей кнопки
+            <p class="answer"></p>
+        </div>
+        <div> Ответы для четвертой кнопки
+            <p class="answer"></p>
+        </div>
+    </div>
+
+    <p id="result"></p>
+
+</body>
+
+</html>

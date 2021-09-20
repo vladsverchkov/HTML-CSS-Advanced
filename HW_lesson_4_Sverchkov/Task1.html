@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <script>
+        window.onload = function () {
+            const buttons = document.querySelectorAll("input[type=button]");
+            const image = document.getElementsByTagName("img")[0];
+
+            buttons[0].addEventListener("click", function () {
+                image.src = "pictures/1.jpeg";
+            });
+
+            buttons[1].addEventListener("click", function () {
+                image.src = "pictures/2.png";
+            });
+
+            buttons[2].addEventListener("click", function () {
+                image.src = "pictures/3.jpg";
+            });
+        }
+    </script>
+
+    <style>
+        figure {
+            text-align: center;
+        }
+
+        figure img {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Создайте страницу с тремя кнопками, при нажатии на каждую из кнопок должно
+         меняться изображение, выводимое на странице.  -->
+
+         <figure>
+             <img src="" alt="Some image">
+         </figure>
+
+         <input type="button" value="Картинка 1">
+         <input type="button" value="Картинка 2">
+         <input type="button" value="Картинка 3">
+</body>
+</html>
