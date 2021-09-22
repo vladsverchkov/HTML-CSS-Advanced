@@ -1,0 +1,142 @@
+@font-face {
+  font-family: Gilroy1;
+  src: url("../fonts/Gilroy-Regular.ttf");
+}
+
+@font-face {
+  font-family: Gilroy1;
+  src: url("../fonts/Gilroy-Bold.ttf");
+  font-weight: bold;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Gilroy1;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid red;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 32px;
+  text-align: center;
+  line-height: 40px;
+  color: #1E959B;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+p {
+  font-size: 14px;
+  line-height: 16px;
+  color: #3c3c3c;
+}
+
+.btn {
+  background-color: #F05670;
+  color: #fff;
+  font-size: 16px;
+  line-height: 19.8px;
+  font-family: Gilroy1;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 5px 10px rgba(30, 149, 155, 0.5);
+          box-shadow: 0px 5px 10px rgba(30, 149, 155, 0.5);
+}
+
+.main-top p {
+  padding: 0 25px;
+}
+
+header {
+  padding-bottom: 160px;
+  padding-top: 45px;
+}
+
+header .contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .contacts .callback {
+  display: none;
+  width: 400px;
+}
+
+header .contacts .callback .icon {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid red;
+}
+
+header .contacts .callback .icon.telegram {
+  background-image: url("../images/icons/telegram.svg");
+}
+
+header .contacts .callback .icon.email {
+  background-image: url("../images/icons/envelope.svg");
+}
+
+header .contacts .callback .icon.phone-number {
+  background-image: url("../images/icons/telephone.svg");
+  width: auto;
+  background-position: left center;
+}
+
+header .btn-header {
+  width: 230px;
+  height: 70px;
+  margin: 0 auto;
+  margin-top: 150px;
+  display: block;
+}
+
+header .main-top {
+  margin-top: 65px;
+}
+
+header .main-top p {
+  padding: 0 25px;
+}
+
+@media (min-width: 767px) {
+  header .contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header .contacts .logo {
+    width: 235px;
+    height: 55px;
+  }
+  header .contacts .logo img {
+    width: 100%;
+    height: 100%;
+  }
+  header .contacts .callback {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/*# sourceMappingURL=main.css.map */

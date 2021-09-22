@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener("load", drawFlag, false);
+
+        function drawFlag() {
+            const canvas = document.getElementById("canvas");
+            let context = canvas.getContext("2d");
+
+            //https://www.victoriakirst.com/beziertool/
+
+
+            //-----------------первая фигура
+
+            context.fillStyle = "red";
+            context.lineWidth = 1;
+            context.strokeStyle = "black"; // установка цвета/градиента/шаблона для обводки фигуры
+
+            context.beginPath();
+
+            context.moveTo(10, 30);
+            context.bezierCurveTo(50, 90, 159, -30, 200, 30);
+            context.lineTo(200, 190);
+            context.bezierCurveTo(120, 110, 89, 250, 10, 190);
+
+            context.closePath(); // для конечной линии, которая соединяет
+
+            context.fill();
+            //context.stroke(); // рисование фигуры (отображение пути)
+
+            //-------------------вторая фигура
+
+            context.lineWidth = 2;
+            context.fillStyle = "white";
+            context.strokeStyle = "green";
+
+            context.beginPath();
+
+            context.moveTo(60, 43);
+            context.lineTo(150, 10);
+            context.lineTo(150, 165);
+            context.lineTo(60, 208);
+
+            context.closePath(); // для конечной линии, которая соединяет
+
+            context.fill();
+
+            //------------------третья фигура
+
+            context.lineWidth = 3;
+            context.fillStyle = "red";
+            context.strokeStyle = "red";
+
+            context.beginPath();
+
+            context.moveTo(109, 147);
+            context.lineTo(109, 132);
+            context.lineTo(98, 132);
+            context.lineTo(105, 126);
+            context.lineTo(92, 116);
+            context.lineTo(97, 117);
+            context.lineTo(92, 109);
+            context.lineTo(99, 113);
+            context.lineTo(97, 108);
+            context.lineTo(106, 118);
+            context.lineTo(106, 99);
+            context.lineTo(108, 105);
+            context.lineTo(111, 94);
+            context.lineTo(111, 104);
+            context.lineTo(114, 98);
+            context.lineTo(113, 118);
+            context.lineTo(125, 111);
+            context.lineTo(121, 115);
+            context.lineTo(130, 111);
+            context.lineTo(123, 117);
+            context.lineTo(131, 115);
+            context.lineTo(113, 125);
+            context.lineTo(118, 132);
+            context.lineTo(108, 132);
+
+            context.fill();
+            context.stroke();
+
+            const canvas2 = document.getElementById("canvas2");
+            let context2 = canvas2.getContext("2d");
+
+            let item = new Image();
+            item.src = "img.png";
+            item.onload = function () {
+                context2.fillStyle = context2.createPattern(item, 'no-repeat');
+                context2.fillRect(0, 0, 350, 150);
+            }
+
+        }
+    </script>
+
+    <style>
+        canvas {
+            border: 3px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Нарисовать флаг Канады -->
+    <canvas id="canvas" height="300" width="600">
+        Ваш браузер не поддерживает элемент <i>Canvas</i>
+    </canvas>
+
+    <audio controls>
+        <source src="hp.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+     </audio>
+
+    <canvas id="canvas2" height="300" width="600">
+        Ваш браузер не поддерживает элемент <i>Canvas</i>
+    </canvas>
+
+    <audio controls>
+        <source src="pcb.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+     </audio>
+
+
+    
+</body>
+
+</html>

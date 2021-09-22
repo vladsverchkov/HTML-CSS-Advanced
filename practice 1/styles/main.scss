@@ -1,0 +1,60 @@
+$mainColor: #1E959B;
+$secondaryColor: #F05670;
+$textColor: #3c3c3c;
+
+
+@import 'fonts';
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Gilroy1;
+}
+
+.container {
+    //max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid red;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 32px;
+    text-align: center;
+    line-height: 40px;
+    color: $mainColor;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+p {
+    font-size: 14px;
+    line-height: 16px;
+    color: $textColor;
+}
+
+.btn {
+    background-color: $secondaryColor;
+    color: #fff;
+    font-size: 16px;
+    line-height: 19.8px;
+    font-family: Gilroy1;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(30, 149, 155, 0.5);
+}
+
+.main-top p {
+    padding: 0 25px;
+}
+
+
+
+@import 'header';

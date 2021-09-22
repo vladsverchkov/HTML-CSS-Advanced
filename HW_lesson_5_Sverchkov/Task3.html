@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+
+    <script>
+
+        window.addEventListener("load", drawCrosses, false);
+
+        function drawCrosses() {
+            const canvas = document.getElementById("canvas");
+            let context = canvas.getContext("2d");
+
+            context.lineWidth = 1;
+            context.strokeStyle = "black";
+
+            let x = 50;
+            let y = 50;
+
+            for (let i = 0; i < 10; i++) {
+                context.moveTo(x, y);
+                context.lineTo(x, 270);
+                x = x + 20;
+                context.stroke();
+            }
+
+            x = 30;
+            y = 70;
+
+            for (let i = 0; i < 10; i++) {
+                context.moveTo(x, y);
+                context.lineTo(250, y);
+                y = y + 20;
+                context.stroke();
+            }
+        }
+
+    </script>
+
+    <style>
+        canvas {
+            border: 3px solid red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <canvas id="canvas" height="300" width="600">
+        Ваш браузер не поддерживает элемент <i>Canvas</i>
+    </canvas>
+</body>
+
+</html>
