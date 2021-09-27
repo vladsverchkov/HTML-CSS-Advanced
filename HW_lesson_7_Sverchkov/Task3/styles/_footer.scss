@@ -1,0 +1,73 @@
+$zero: 0;
+$frame: 1fr;
+$aewColor: #c5ab58;
+$i: 1;
+
+footer {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-rows: $frame $frame;
+
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+    box-sizing: border-box;
+
+        ul {
+
+            display: grid;
+            grid-template-columns: repeat(4, $frame);
+            text-align: center;
+            align-items: center;
+
+            &.footer_ul {
+
+                margin: $zero;
+                padding: $zero;
+                list-style-type: none;
+
+            li {
+                
+                display: inline;
+                width: 100%;
+        
+
+                a {
+                    text-decoration: none;
+
+                    &:visited {
+                        color: white;
+                    }
+
+                    &:hover {
+                        color: $aewColor;
+                    }
+                }   
+
+            }
+
+        }    
+
+    }
+
+    div {
+        &.signature {
+            border-top: 1px dashed white;
+            display: grid;
+            text-align: center;
+            align-items: center;
+            color: $aewColor;
+        }
+    }
+
+}
+
+@while $i < 5 {
+    footer li:nth-child(#{$i}) {
+        padding: 30px $zero;
+    }
+
+    $i: $i + 1;
+}

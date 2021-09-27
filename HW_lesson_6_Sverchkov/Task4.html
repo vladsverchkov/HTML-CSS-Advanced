@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient</title>
+
+    <style>
+        /* div.outer {
+            width: 500px;
+            height: 500px;
+            background: repeating-radial-gradient(ellipse at left center, yellow 20px, green 30px, #00BFFF 35px);
+        } */
+
+        /* div.inner {
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: repeating-radial-gradient(circle, yellow 0px, yellow 40px, green 41px,
+            green 50px, #00BFFF 51px, #00BFFF 60px );
+        } */
+
+        div {
+            float: left;
+        }
+
+        .multi-target {
+            width: 500px;
+            height: 500px;
+            margin-right: -315px;
+            background: radial-gradient(ellipse 170% 270px at -920px,
+            orange 60%, green 80%, #00BFFF 83%,
+            orange 90%, green 97%, #00BFFF 105%,
+            orange 115%, green 120%, #00BFFF 125%, orange 130%,
+            green);
+
+       
+    }
+
+    /* background: repeating-radial-gradient(ellipse at left, orange 0px, green 20px, #00BFFF 25px, orange 30px); */
+        /* background: repeating-radial-gradient(ellipse at left, orange, green, #00BFFF); */
+
+    .multi-target2 {
+        width: 500px;
+        height: 500px;
+        
+        background: radial-gradient(ellipse 170% 270px at 1105px,
+      orange 60%, green 80%, #00BFFF 83%,
+      orange 90%, green 97%, #00BFFF 105%,
+      orange 115%, green 120%, #00BFFF 125%, orange 130%,
+       green);
+    }
+    </style>
+</head>
+
+<body>
+    <img src="img1.png" alt="Gradient">
+
+    <!-- <div class="outer">
+        <div class="inner"></div>
+    </div> -->
+
+    <div class="multi-target"></div>
+    <div class="multi-target2"></div>
+
+    <h2>Смог только так реализовать(</h2>
+</body>
+
+</html>

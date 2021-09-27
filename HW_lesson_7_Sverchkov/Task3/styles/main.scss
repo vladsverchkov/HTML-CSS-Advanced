@@ -1,0 +1,40 @@
+$autoValue: auto;
+$fullSize: 100%;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center {
+    width: 80%;
+    height: $autoValue;
+    margin: 0 $autoValue;
+
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+
+    .dark-div {
+       
+        width: $fullSize;
+        height: $fullSize;
+        background: linear-gradient(rgba(20,20,20, 0.6));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+}
+
+header, nav, article, footer {
+    
+    width: $autoValue;
+}
+
+@import 'header';
+@import 'nav';
+@import 'article';
+@import 'footer';
+

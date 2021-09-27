@@ -1,0 +1,28 @@
+$height: 150;
+$hoverBackgroundColor: #fc3d03 + #9803fc;
+$mixinCssValue: 3px solid white;
+
+@mixin crossBrowser($property, $css) {
+    -webkit-#{$property} : $css;
+    -moz-#{$property} : $css;
+    -o-#{$property} : $css;
+    #{$property} : $css;
+}
+
+article {
+    height: $height*3 + px;
+    background-color: rgb(170, 182, 194);
+   
+    width:80%;
+    float: left;
+    
+    &:hover {
+        background-color: $hoverBackgroundColor;
+        cursor: pointer;
+        font-size: $height / 2 + px;
+        @include crossBrowser(transition, 0.5s)
+    }
+    
+    @include crossBrowser(border, $mixinCssValue);
+
+}

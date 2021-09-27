@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  -webkit-color: #7d4f4f;
+  -moz-color: #7d4f4f;
+  -o-color: #7d4f4f;
+  color: #7d4f4f;
+  -webkit-font-size: 30px;
+  -moz-font-size: 30px;
+  -o-font-size: 30px;
+  font-size: 30px;
+  -webkit-font-family: Arial, Helvetica, sans-serif;
+  -moz-font-family: Arial, Helvetica, sans-serif;
+  -o-font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+article, aside, footer, header, nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  aside, article {
+    float: none !important;
+    height: 300px;
+    width: 100% !important;
+  }
+}
+
+header {
+  height: 100px;
+  background-color: #f35454;
+  -webkit-border: 3px solid green;
+  -moz-border: 3px solid green;
+  -o-border: 3px solid green;
+  border: 3px solid green;
+}
+
+header:hover {
+  background-color: #c787f5;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+nav {
+  height: 75px;
+  background-color: #54a6f3;
+  -webkit-border: 3px solid orange;
+  -moz-border: 3px solid orange;
+  -o-border: 3px solid orange;
+  border: 3px solid orange;
+}
+
+nav:hover {
+  background-color: #ffffc9;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+article {
+  height: 450px;
+  background-color: #aab6c2;
+  width: 80%;
+  float: left;
+  -webkit-border: 3px solid white;
+  -moz-border: 3px solid white;
+  -o-border: 3px solid white;
+  border: 3px solid white;
+}
+
+article:hover {
+  background-color: #ff40ff;
+  cursor: pointer;
+  font-size: 75px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+aside {
+  height: 450px;
+  background-color: #a87e8e;
+  width: 20%;
+  float: left;
+  -webkit-border: 3px solid red;
+  -moz-border: 3px solid red;
+  -o-border: 3px solid red;
+  border: 3px solid red;
+}
+
+aside:hover {
+  background-color: #ffff08;
+  cursor: pointer;
+  font-size: 75px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+footer {
+  height: 50px;
+  background-color: #54f369;
+  -webkit-border: 3px solid purple;
+  -moz-border: 3px solid purple;
+  -o-border: 3px solid purple;
+  border: 3px solid purple;
+}
+
+footer:hover {
+  background-color: white;
+  cursor: pointer;
+  font-size: 35px;
+  -webkit-border: 5px solid red;
+  -moz-border: 5px solid red;
+  -o-border: 5px solid red;
+  border: 5px solid red;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+/*# sourceMappingURL=main.css.map */

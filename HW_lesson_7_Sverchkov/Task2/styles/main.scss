@@ -1,0 +1,46 @@
+$textColor: #3c3c3c + #411313;
+$textFont: Arial, Helvetica, sans-serif;
+$fontSize: 30px;
+$centerValue: center;
+
+@mixin crossBrowser($property, $css) {
+    -webkit-#{$property} : $css;
+    -moz-#{$property} : $css;
+    -o-#{$property} : $css;
+    #{$property} : $css;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    @include crossBrowser(color, $textColor);
+    @include crossBrowser(font-size, $fontSize);
+    @include crossBrowser(font-family, $textFont);
+}
+
+article, aside, footer, header, nav {
+    display: flex;
+    justify-content: $centerValue;
+    align-items: $centerValue;
+}
+
+@media screen and (max-width: 600px) {
+    aside, article  
+    {
+        float: none !important;
+        height: 300px;
+        width: 100% !important;
+     
+    }
+
+}
+
+@import 'header';
+@import 'nav';
+@import 'article';
+@import 'aside';
+@import 'footer';

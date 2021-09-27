@@ -1,0 +1,29 @@
+$height: 25;
+$hoverBackgroundColor: #6e93b8 + #a46eb8;
+$mixinCssValue: 3px solid purple;
+$mixinCssValue2: 5px solid red;
+
+@mixin crossBrowser($property, $css) {
+    -webkit-#{$property} : $css;
+    -moz-#{$property} : $css;
+    -o-#{$property} : $css;
+    #{$property} : $css;
+}
+
+footer {
+    height: $height*2 + px;
+    background-color: rgb(84, 243, 105);
+
+    @include crossBrowser(border, $mixinCssValue);
+
+    &:hover {
+        background-color: $hoverBackgroundColor;
+        cursor: pointer;
+        font-size: $height + 10 + px;
+        @include crossBrowser(border, $mixinCssValue2);
+        @include crossBrowser(transition, 1s);
+    }
+    
+    
+
+}

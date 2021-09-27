@@ -11,18 +11,17 @@
 
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Gilroy1;
+  font-family: Gilroy1, sans-serif;
 }
 
 .container {
   width: 100%;
   margin: 0 auto;
-  border: 1px solid red;
   padding: 0 20px;
 }
 
@@ -38,25 +37,27 @@ h1 {
 p {
   font-size: 14px;
   line-height: 16px;
-  color: #3c3c3c;
+  color: #3C3C3C;
 }
 
 .btn {
   background-color: #F05670;
   color: #fff;
   font-size: 16px;
-  line-height: 19.8px;
-  font-family: Gilroy1;
-  border: none;
-  text-transform: uppercase;
-  font-weight: bold;
+  line-height: 19.80px;
   border-radius: 20px;
   -webkit-box-shadow: 0px 5px 10px rgba(30, 149, 155, 0.5);
           box-shadow: 0px 5px 10px rgba(30, 149, 155, 0.5);
+  font-family: Gilroy1;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.main-top p {
-  padding: 0 25px;
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }
 
 header {
@@ -86,7 +87,6 @@ header .contacts .callback .icon {
   height: 40px;
   background-repeat: no-repeat;
   background-position: center;
-  border: 1px solid red;
 }
 
 header .contacts .callback .icon.telegram {
@@ -102,6 +102,17 @@ header .contacts .callback .icon.phone-number {
   width: auto;
   background-position: left center;
   padding-left: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 19.8px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #1E959B;
 }
 
 header .btn-header {
@@ -138,6 +149,55 @@ header .main-top p {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  header .contacts .callback .icon {
+    margin-right: 55px;
+  }
+  header .contacts .callback .btn-start-project {
+    width: 175px;
+    height: 60px;
+  }
+  header .main-top {
+    background-image: url("../images/header-bg.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center right;
+    padding-right: calc(100% - 390px);
+  }
+  header .main-top p {
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 767px) and (min-width: 992px) {
+  header .contacts {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header .contacts .logo {
+    width: 235px;
+    height: 55px;
+  }
+  header .contacts .logo img {
+    width: 100%;
+    height: 100%;
+  }
+  header .contacts .callback {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .contacts .callback .icon {
+    margin-right: 55px;
+  }
+  header .contacts .callback .btn-start-project {
+    width: 175px;
+    height: 60px;
+  }
+  header .main-top {
+    block-size: 50% 100%;
+    background-position: 90% center;
   }
 }
 /*# sourceMappingURL=main.css.map */
